@@ -1,0 +1,9 @@
+{
+    "name": "snapexpay/blesta-snapex-pay",
+    "description": "SnapEX Pay crypto payments for Blesta",
+    "license": "MIT",
+    "type": "blesta-gateway-nonmerchant",
+    "require": {
+        "blesta/composer-installer": "~1.0"
+    }
+}

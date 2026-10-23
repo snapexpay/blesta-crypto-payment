@@ -1,0 +1,10 @@
+<?php if (!empty($pay_url)) { ?>
+<a class="btn btn-success" href="<?php echo $this->Html->safe($pay_url); ?>" rel="noopener">
+    <?php $this->_('SnapexPay.buildprocess.submit'); ?>
+</a>
+    <?php if (!empty($test_mode)) { ?>
+<div class="form-text"><?php $this->_('SnapexPay.process.test_mode'); ?></div>
+    <?php } ?>
+<?php } elseif (!empty($notice)) { ?>
+<p class="text-muted"><?php echo $this->Html->safe($notice); ?></p>
+<?php } ?>

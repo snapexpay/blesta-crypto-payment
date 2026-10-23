@@ -1,0 +1,45 @@
+<?php
+$fields = [
+    'api_key' => 'SnapexPay.api_key_note',
+    'webhook_secret' => 'SnapexPay.webhook_secret_note',
+];
+foreach ($fields as $name => $note) {
+    ?>
+<div class="mb-3">
+    <?php $this->Form->label($this->_('SnapexPay.' . $name, true), $name, ['class' => 'form-label']); ?>
+    <?php $this->Form->fieldText($name, ($meta[$name] ?? null), ['id' => $name, 'class' => 'form-control', 'autocomplete' => 'off']); ?>
+    <div class="form-text"><?php echo $this->Html->safe($this->_($note, true)); ?></div>
+</div>
+    <?php
+}
+?>
+<div class="mb-3">
+    <?php $this->Form->label($this->_('SnapexPay.webhook_url', true), 'snapex_pay_webhook_url', ['class' => 'form-label']); ?>
+    <?php $this->Form->fieldText('snapex_pay_webhook_url', ($webhook_url ?? ''), ['id' => 'snapex_pay_webhook_url', 'class' => 'form-control', 'readonly' => 'readonly', 'onclick' => 'this.select()']); ?>
+</div>
+<div class="mb-3">
+    <?php $this->Form->label($this->_('SnapexPay.fee_on', true), 'fee_on', ['class' => 'form-label']); ?>
+    <?php $this->Form->fieldSelect('fee_on', ($fee_options ?? []), ($meta['fee_on'] ?? 'merchant'), ['id' => 'fee_on', 'class' => 'form-select']); ?>
+</div>
+<div class="mb-3">
+    <?php $this->Form->label($this->_('SnapexPay.expires_minutes', true), 'expires_minutes', ['class' => 'form-label']); ?>
+    <?php $this->Form->fieldText('expires_minutes', ($meta['expires_minutes'] ?? '60'), ['id' => 'expires_minutes', 'class' => 'form-control', 'inputmode' => 'numeric']); ?>
+    <div class="form-text"><?php echo $this->Html->safe($this->_('SnapexPay.expires_minutes_note', true)); ?></div>
+</div>
+<div class="mb-3">
+    <div class="form-check">
+        <?php $this->Form->fieldCheckbox('test_mode', 'true', (($meta['test_mode'] ?? 'false') == 'true'), ['id' => 'test_mode', 'class' => 'form-check-input']); ?>
+        <label for="test_mode" class="form-check-label"><?php $this->_('SnapexPay.test_mode'); ?></label>
+    </div>
+    <div class="form-text"><?php echo $this->Html->safe($this->_('SnapexPay.test_mode_note', true)); ?></div>
+</div>
+<div class="mb-3">
+    <?php $this->Form->label($this->_('SnapexPay.partner_id', true), 'partner_id', ['class' => 'form-label']); ?>
+    <?php $this->Form->fieldText('partner_id', ($meta['partner_id'] ?? null), ['id' => 'partner_id', 'class' => 'form-control', 'maxlength' => 32]); ?>
+    <div class="form-text"><?php echo $this->Html->safe($this->_('SnapexPay.partner_id_note', true)); ?></div>
+</div>
+<div class="mb-3">
+    <?php $this->Form->label($this->_('SnapexPay.api_url', true), 'api_url', ['class' => 'form-label']); ?>
+    <?php $this->Form->fieldText('api_url', ($meta['api_url'] ?? null), ['id' => 'api_url', 'class' => 'form-control']); ?>
+    <div class="form-text"><?php echo $this->Html->safe($this->_('SnapexPay.api_url_note', true)); ?></div>
+</div>
