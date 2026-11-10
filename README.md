@@ -11,6 +11,7 @@ recorded in Blesta and applied to the invoices automatically.
 - Works with any invoice currency: non-USD amounts are converted to USD with the exchange rates Blesta
   already keeps; the transaction is recorded in the invoice currency.
 - Test mode: test invoices confirm by themselves without real money; only staff see the button while it is on.
+- Besides crypto, two more payment methods can be turned on for your SnapEX Pay account on request: Russian rubles by QR code (Russia) and Alipay. Ask us in the chat on [pay.snapex.pro](https://pay.snapex.pro).
 
 Requirements: Blesta 6.x (written against the 6.0 gateway API; the non-merchant gateway API is the same
 in 5.x), PHP with cURL, a SnapEX Pay merchant account.
